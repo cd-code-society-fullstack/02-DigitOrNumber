@@ -3,7 +3,7 @@ import java.util.regex.Pattern;
 
 public class Problem01 {
 
-    private static DigitLetters digitLetters(String str) {
+    private static String digitLetters(String str) {
         Pattern digitsPattern = Pattern.compile("\\d");
         Matcher digitsMatcher = digitsPattern.matcher(str);
         int digitsCount = 0;
@@ -17,23 +17,12 @@ public class Problem01 {
         while (lettersMatcher.find()) {
             lettersCount++;
         }
-
-        return new DigitLetters(digitsCount, lettersCount);
-    }
-
-    static class DigitLetters {
-        int digits;
-        int letters;
-
-        DigitLetters(int digits, int letters) {
-            this.digits = digits;
-            this.letters = letters;
-        }
+        return "{Digits:" + digitsCount + ", Letters:" + lettersCount +"}";
     }
 
     public static void main(String[] args) {
         String input = args[0];
-        DigitLetters dl = digitLetters(input);
-        System.out.println("Digits: " + dl.digits + ", Letters: " + dl.letters);
+        String output = digitLetters(input);
+        System.out.println(output);
     }
 }
