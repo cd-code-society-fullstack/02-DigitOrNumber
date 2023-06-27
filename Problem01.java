@@ -20,6 +20,10 @@ public class Problem01 {
         return "{Digits:" + digitsCount + ", Letters:" + lettersCount +"}";
     }
 
+     /**
+     * DO NOT CHANGE ANY CODE BELOW THIS LINE
+     * 
+     */
     public static void main(String[] args) {
         String input = args[0];
         String output = digitLetters(input);
